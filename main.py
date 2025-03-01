@@ -6,7 +6,7 @@ def main():
     st.title("Data Filtering")
 
     # Load data using Streamlit's file uploader
-    uploaded_file = st.file_uploader("Upload a file", type=["csv", "json"])  # Change type as needed
+    uploaded_file = st.file_uploader("Upload a JSON file", type=["json", "txt"])  # Change type as needed
 
     if uploaded_file is not None:
         # Load data from the uploaded file
@@ -23,7 +23,7 @@ def main():
         accounts_older_than_90_days = filter.account_older_than_90_days()
 
         # Display the result in the Streamlit app
-        st.write(f"Are there accounts older than 90 days? {accounts_older_than_90_days}")
+        st.write(f"Is the account older than 90 days? {accounts_older_than_90_days}")
 
         # Display the result in the Streamlit app
         st.write(filter.balance_equal_to_credit_debit())
